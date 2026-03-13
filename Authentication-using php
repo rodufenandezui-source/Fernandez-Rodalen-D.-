@@ -1,0 +1,18 @@
+<?php
+session_start();
+
+// Example stored credentials
+$stored_username = "admin";
+$stored_password = "12345";
+
+// Simulated input (normally from POST)
+$username = "admin";
+$password = "12345";
+
+if ($username == $stored_username && $password == $stored_password) {
+    $_SESSION['user'] = $username;
+    echo "Login successful!";
+} else {
+    echo "Invalid username or password.";
+}
+?>

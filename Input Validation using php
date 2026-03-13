@@ -1,0 +1,28 @@
+<?php
+
+$name = "";
+$email = "";
+
+// Sample input (usually from form)
+$name = "Roda";
+$email = "roda@email.com";
+
+// Name validation
+if (empty($name)) {
+    echo "Name is required<br>";
+} elseif (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+    echo "Only letters and spaces allowed in name<br>";
+} else {
+    echo "Name is valid<br>";
+}
+
+// Email validation
+if (empty($email)) {
+    echo "Email is required<br>";
+} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "Invalid email format<br>";
+} else {
+    echo "Email is valid<br>";
+}
+
+?>
